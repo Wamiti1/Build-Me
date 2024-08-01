@@ -35,10 +35,15 @@ a) File Types
   
 b) Model
 - Users
+  - First Name, Last Name
 - Engneers
+  - ID, Profile, Category
 - Projects
+  - ID, Images
 - Contracts
+  - ID, Company/Organization
 - Reviews
+  - Messages
 - Posts
 
 c) Architecture 
@@ -56,3 +61,5 @@ Login/Signup
    - Post Projects
    - Personal Profile
 3) Admin     
+- Engineers Board Of Kenya(EBK)
+- Project Owner
