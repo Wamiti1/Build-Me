@@ -67,11 +67,19 @@ Login/Signup
 
 # DEVELOPMENT STEPS
 Step 1. Create flutter project
+
 Step 2. Create Lib Structure
+
 Step 3. Create All Files as per Design
+
 Step 4. Create All Models
+
 Step 5. Build Static Engineer Page
+
 Step 6. Build Static Admin Page
+
 Step 7. Build Static General Page
+
 Step 8. Build Home Page with buttons For Navigation to Static Pages
+
 Step 9. Actual Building Of UI
