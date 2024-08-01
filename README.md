@@ -25,3 +25,34 @@ Some key features of the app will include;
 4. County Government
 5. Quantity Surveyors
 6. Private Developers
+
+# PROJECT DESIGN
+# Database
+a) File Types
+- Images
+- Documents
+- General Text
+  
+b) Model
+- Users
+- Engneers
+- Projects
+- Contracts
+- Reviews
+- Posts
+
+c) Architecture 
+
+# ACTUAL LOGIC
+Login/Signup
+
+1) General Users
+   - Homepage - Recent reviews/Projects
+   - Dashboard
+   - Projects
+   - Reviews
+   - Engineers
+2) Engineers
+   - Post Projects
+   - Personal Profile
+3) Admin     
