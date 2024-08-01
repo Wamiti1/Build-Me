@@ -2,9 +2,9 @@
 An App For Engineers Using Flutter
 
 # BUILD ME
- Institution : Modcom Institute Of Technology
- Name : Mbogori Lewis Mutugi
- Supervisor : Titus Muthomi
+ - Institution : Modcom Institute Of Technology
+ - Name : Mbogori Lewis Mutugi
+ - Supervisor : Titus Muthomi
 
 # PROBLEM STATEMENT 
 Engineers often face challenges in showcasing their work to the public. Traditional methods such as physical portfolios, personal websites, and professional networking platforms can be limiting in terms of reach, accessibility, and ease of use. This creates a gap where engineers struggle to effectively present their projects, innovations, and achievements to potential employers, clients, and peers.
