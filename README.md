@@ -35,9 +35,9 @@ a) File Types
   
 b) Model
 - Users
-  - First Name, Last Name
+  - First Name, Last Name, Email, Password, User ID, Phone Number
 - Engneers
-  - ID, Profile, Category
+  - ID, Profile, Category, First Name, Last Name, Email, Password, User ID, Phone Number
 - Projects
   - ID, Images
 - Contracts
