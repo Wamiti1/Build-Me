@@ -35,9 +35,9 @@ a) File Types
   
 b) Model
 - Users
-  - First Name, Last Name
+  - First Name, Last Name, Email, Password, User ID, Phone Number
 - Engneers
-  - ID, Profile, Category
+  - ID, Profile, Category, First Name, Last Name, Email, Password, User ID, Phone Number
 - Projects
   - ID, Images
 - Contracts
@@ -63,3 +63,23 @@ Login/Signup
 3) Admin     
 - Engineers Board Of Kenya(EBK)
 - Project Owner
+
+
+# DEVELOPMENT STEPS
+Step 1. Create flutter project
+
+Step 2. Create Lib Structure
+
+Step 3. Create All Files as per Design
+
+Step 4. Create All Models
+
+Step 5. Build Static Engineer Page
+
+Step 6. Build Static Admin Page
+
+Step 7. Build Static General Page
+
+Step 8. Build Home Page with buttons For Navigation to Static Pages
+
+Step 9. Actual Building Of UI
