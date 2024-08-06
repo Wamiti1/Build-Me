@@ -1,4 +1,7 @@
 
+import 'package:build_me/screens/admin.dart';
+import 'package:build_me/screens/engineers.dart';
+import 'package:build_me/screens/genusers.dart';
 import 'package:flutter/material.dart';
 
 
@@ -19,16 +22,16 @@ class _HomeState extends State<Home> {
       ),
 
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Expanded(
-            flex: 2,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Expanded(
                   flex: 4,
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.end,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Image.asset('assets/image1.webp', scale: 7.5,),
                       
@@ -41,10 +44,9 @@ class _HomeState extends State<Home> {
                 ),
               ],
             ),
-          ),
-          const Expanded(
-              flex: 2,
-              child: Column(
+        
+          const Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Padding(
                     padding: EdgeInsets.all(8.0),
@@ -54,11 +56,27 @@ class _HomeState extends State<Home> {
                   )
                 ],
 
-              )),
+              ),
               
-            OutlinedButton(onPressed:(){}, child: const Text('General User')),
-            OutlinedButton(onPressed:(){}, child: const Text('Engineer')),
-            OutlinedButton(onPressed:(){}, child: const Text('Admin'))
+            OutlinedButton(onPressed:(){Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => GeneralUsersPage()),
+            );
+
+            }, child: const Text('General User')),
+            OutlinedButton(onPressed:(){
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => EngineersPage()),
+              );
+
+            }, child: const Text('Engineer')),
+            OutlinedButton(onPressed:(){
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => AdminPage()),
+              );
+            }, child: const Text('Admin'))
               
               
         ],
