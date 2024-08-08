@@ -1,31 +1,28 @@
 import 'package:flutter/material.dart';
 
-class Project {
+class Contract {
   final String id;
+  final String userId;
   final String engineerId;
-  final String name;
-  final String description;
-  final List<String> images;
+  final String details;
   final DateTime startDate;
   final DateTime endDate;
 
-  Project({
+  Contract({
     required this.id,
+    required this.userId,
     required this.engineerId,
-    required this.name,
-    required this.description,
-    required this.images,
+    required this.details,
     required this.startDate,
     required this.endDate,
   });
 
-  factory Project.fromJson(Map<String, dynamic> json) {
-    return Project(
+  factory Contract.fromJson(Map<String, dynamic> json) {
+    return Contract(
       id: json['id'],
+      userId: json['userId'],
       engineerId: json['engineerId'],
-      name: json['name'],
-      description: json['description'],
-      images: List<String>.from(json['images']),
+      details: json['details'],
       startDate: DateTime.parse(json['startDate']),
       endDate: DateTime.parse(json['endDate']),
     );
@@ -34,10 +31,9 @@ class Project {
   Map<String, dynamic> toJson() {
     return {
       'id': id,
+      'userId': userId,
       'engineerId': engineerId,
-      'name': name,
-      'description': description,
-      'images': images,
+      'details': details,
       'startDate': startDate.toIso8601String(),
       'endDate': endDate.toIso8601String(),
     };

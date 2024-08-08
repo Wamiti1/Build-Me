@@ -21,16 +21,15 @@ class _HomeState extends State<Home> {
         centerTitle: true,
       ),
 
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Expanded(
-                  flex: 4,
-                  child: Column(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Image.asset('assets/image1.webp', scale: 7.5,),
@@ -41,46 +40,52 @@ class _HomeState extends State<Home> {
                       ),
                     ],
                   ),
-                ),
-              ],
-            ),
-        
-          const Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: Text(
-                        textAlign: TextAlign.center,
-                      "Proceed Down Below",),
-                  )
                 ],
-
               ),
-              
-            OutlinedButton(onPressed:(){Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => GeneralUsersPage()),
-            );
-
-            }, child: const Text('General User')),
-            OutlinedButton(onPressed:(){
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => EngineersPage()),
-              );
-
-            }, child: const Text('Engineer')),
-            OutlinedButton(onPressed:(){
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => AdminPage()),
-              );
-            }, child: const Text('Admin'))
-              
-              
-        ],
+          
+            const Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Text(
+                          textAlign: TextAlign.center,
+                        "Proceed Down Below",),
+                    )
+                  ],
         
+                ),
+                
+              Padding(
+                padding: const EdgeInsets.only(bottom: 30),
+                child: OutlinedButton(onPressed:(){Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const Genusers()),
+                );
+                        
+                }, child: const Text('General User')),
+              ),
+              Padding(
+                padding: const  EdgeInsets.only(bottom: 30),
+                child: OutlinedButton(onPressed:(){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const EngineersPage()),
+                  );
+                        
+                }, child: const Text('Engineer')),
+              ),
+              OutlinedButton(onPressed:(){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const AdminPage()),
+                );
+              }, child: const Text('Admin'))
+                
+                
+          ],
+          
+        ),
       ),
     );
   }

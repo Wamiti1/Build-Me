@@ -1,50 +1,15 @@
+import 'package:build_me/screens/addnewpost.dart';
+import 'package:build_me/screens/addnewuser.dart';
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Admin Dashboard',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: HomePage(),
-    );
-  }
-}
-
-class HomePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Home Page'),
-      ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => AdminPage()),
-            );
-          },
-          child: Text('Go to Admin Page'),
-        ),
-      ),
-    );
-  }
-}
-
 class AdminPage extends StatelessWidget {
+  const AdminPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Admin Dashboard'),
+        title: const Text('Admin Dashboard'),
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
@@ -52,11 +17,11 @@ class AdminPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             // Dashboard Section
-            Text(
+            const Text(
               'Dashboard',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             DashboardCard(
               title: 'Total Users',
               value: '150',
@@ -65,50 +30,50 @@ class AdminPage extends StatelessWidget {
               title: 'Active Projects',
               value: '25',
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             // User Management Section
-            Text(
+            const Text(
               'User Management',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             ElevatedButton(
               onPressed: () {},
-              child: Text('View All Users'),
+              child: const Text('View All Users'),
             ),
             ElevatedButton(
-              onPressed: () {},
-              child: Text('Add New User'),
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (_) => AddUserForm()));
+              },
+              child: const Text('Add New User'),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             // Content Management Section
-            Text(
+            const Text(
               'Content Management',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             ElevatedButton(
-              onPressed: () {},
-              child: Text('View All Posts'),
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (_) => AddPostForm()));
+              },
+              child: const Text('Add New Post'),
             ),
-            ElevatedButton(
-              onPressed: () {},
-              child: Text('Add New Post'),
-            ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             // Settings Section
-            Text(
+            const Text(
               'Settings',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             ElevatedButton(
               onPressed: () {},
-              child: Text('App Settings'),
+              child: const Text('App Settings'),
             ),
             ElevatedButton(
               onPressed: () {},
-              child: Text('Security Settings'),
+              child: const Text('Security Settings'),
             ),
           ],
         ),
@@ -134,12 +99,12 @@ class DashboardCard extends StatelessWidget {
           children: <Widget>[
             Text(
               title,
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 5),
+            const SizedBox(height: 5),
             Text(
               value,
-              style: TextStyle(fontSize: 16),
+              style: const TextStyle(fontSize: 16),
             ),
           ],
         ),
@@ -147,3 +112,4 @@ class DashboardCard extends StatelessWidget {
     );
   }
 }
+  

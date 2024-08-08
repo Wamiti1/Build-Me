@@ -1,45 +1,8 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Engineers Showcase',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: HomePage(),
-    );
-  }
-}
-
-class HomePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Home Page'),
-      ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => EngineersPage()),
-            );
-          },
-          child: const Text('Go to Engineers Page'),
-        ),
-      ),
-    );
-  }
-}
-
 class EngineersPage extends StatelessWidget {
+  const EngineersPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -161,4 +124,3 @@ class ProjectCard extends StatelessWidget {
     );
   }
 }
-
