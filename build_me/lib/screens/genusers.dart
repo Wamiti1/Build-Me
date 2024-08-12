@@ -70,12 +70,26 @@ class Genusers extends StatelessWidget {
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 10),
-            const Text('Email: support@example.com'),
+            const Text('Email: supportbuildme@gmail.com'),
             const Text('Phone: 0792322047'),
             const Text('Address: P.O. Box 333-00000'),
+
+            TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/login'); // Navigate to the login page
+                },
+                child: const Text('Already have an account? Log in'),
+              ),
+              TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/signup'); // Navigate to the login page
+                },
+                child: const Text("Don't Have an account? Sign Up Here"),
+              ),
           ],
         ),
       ),
+      
     );
   }
 }
