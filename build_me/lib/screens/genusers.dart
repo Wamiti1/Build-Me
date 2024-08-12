@@ -1,3 +1,5 @@
+import 'package:build_me/screens/login.dart';
+import 'package:build_me/screens/signup.dart';
 import 'package:flutter/material.dart';
 
 class Genusers extends StatelessWidget {
@@ -76,13 +78,19 @@ class Genusers extends StatelessWidget {
 
             TextButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, '/login'); // Navigate to the login page
+                  Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => LoginPage()),
+                ); // Navigate to the login page
                 },
                 child: const Text('Already have an account? Log in'),
               ),
               TextButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, '/signup'); // Navigate to the login page
+                  Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => SignUpPage()),
+                ); // Navigate to the login page
                 },
                 child: const Text("Don't Have an account? Sign Up Here"),
               ),

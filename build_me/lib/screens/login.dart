@@ -1,4 +1,6 @@
 // lib/login.dart
+import 'package:build_me/screens/engineers.dart';
+import 'package:build_me/screens/signup.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
@@ -68,15 +70,23 @@ class _LoginPageState extends State<LoginPage> {
               ),
               SizedBox(height: 20),
               ElevatedButton(
-                onPressed: _submitForm,
+                onPressed:(){
+                  Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const EngineersPage()),
+                );
+                },
                 child: Text('Login'),
               ),
               SizedBox(height: 10),
               TextButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, '/signup'); // Navigate to the sign-up page
+                  Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => SignUpPage()),
+                ); // Navigate to the sign-up page
                 },
-                child: Text("Don't have an account? Sign up"),
+                child: const Text("Don't have an account? Sign up"),
               ),
             ],
           ),
