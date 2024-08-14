@@ -1,36 +1,40 @@
 // lib/login.dart
+import 'package:build_me/futures/login.dart';
 import 'package:build_me/screens/engineers.dart';
 import 'package:build_me/screens/signup.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
   @override
-  _LoginPageState createState() => _LoginPageState();
+  State<LoginPage> createState() => _LoginPageState();
 }
 
 class _LoginPageState extends State<LoginPage> {
   final _formKey = GlobalKey<FormState>();
-  String _email = '';
-  String _password = '';
+  // String _email = '';
+  // String _password = '';
 
-  Future<void> _submitForm() async {
-    if (_formKey.currentState!.validate()) {
-      _formKey.currentState!.save();
+  // Future<void> _submitForm() async {
+  //   if (_formKey.currentState!.validate()) {
+  //     _formKey.currentState!.save();
 
-      // You can now use _email and _password to authenticate the user
-      // For example, send the data to your backend API
+  //     // You can now use _email and _password to authenticate the user
+  //     // For example, send the data to your backend API
 
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-        content: Text('Logging in...'),
-      ));
-    }
-  }
+  //     ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+  //       content: Text('Logging in...'),
+  //     ));
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {
+    var email = TextEditingController();
+    var password = TextEditingController();
     return Scaffold(
       appBar: AppBar(
-        title: Text('Login'),
+        title: const Text('Login'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -40,23 +44,22 @@ class _LoginPageState extends State<LoginPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               TextFormField(
-                decoration: InputDecoration(labelText: 'Email'),
+                controller: email,
+                decoration: const InputDecoration(labelText: 'Email'),
                 keyboardType: TextInputType.emailAddress,
                 validator: (value) {
                   if (value!.isEmpty) {
                     return 'Please enter your email';
                   }
-                  if (!RegExp(r'^[^@]+@[^@]+\.[^@]+').hasMatch(value)) {
-                    return 'Please enter a valid email';
+                  else{
+                    return null;
                   }
-                  return null;
                 },
-                onSaved: (value) {
-                  _email = value!;
-                },
+               
               ),
               TextFormField(
-                decoration: InputDecoration(labelText: 'Password'),
+                controller: password,
+                decoration: const InputDecoration(labelText: 'Password'),
                 obscureText: true,
                 validator: (value) {
                   if (value!.isEmpty) {
@@ -64,21 +67,52 @@ class _LoginPageState extends State<LoginPage> {
                   }
                   return null;
                 },
-                onSaved: (value) {
-                  _password = value!;
-                },
+                
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               ElevatedButton(
                 onPressed:(){
-                  Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const EngineersPage()),
-                );
+
+                  try{
+
+                  var isValid = _formKey.currentState!.validate();
+                  if(isValid){
+                    login(email.text, password.text).then((v){
+                      if(v == 'Log in successful'){
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                          content: Text(v.toString()),
+                        ));
+                        
+                        Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const EngineersPage()),);
+                      }
+                      else{
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                          content: Text(v.toString()),
+                        ));
+                      }
+                    });
+                  }
+
+                  else{
+                    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                      content: Text('Please fill in all the fields'),
+                    ));
+                  }
+
+                  }
+                  catch(e){
+                    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                      content: Text(e.toString()),
+                    ));
+                  }
+
+                  
                 },
-                child: Text('Login'),
+                child: const Text('Login'),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               TextButton(
                 onPressed: () {
                   Navigator.push(

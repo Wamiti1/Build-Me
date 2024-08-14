@@ -7,7 +7,9 @@ import 'package:flutter/material.dart';
 
 
 class Home extends StatefulWidget {
-  const Home({super.key});
+const Home({super.key, required this.hasid});
+final bool hasid;
+
 
   @override
   State<Home> createState() => _HomeState();
@@ -71,7 +73,7 @@ class _HomeState extends State<Home> {
                 child: OutlinedButton(onPressed:(){
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) =>  LoginPage()),
+                    MaterialPageRoute(builder: (context) =>  widget.hasid ? const EngineersPage() : const LoginPage()),
                   );
                         
                 }, child: const Text('Engineer')),
